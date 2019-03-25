@@ -64,7 +64,7 @@ EOF
 
 	# run sql in tempfile
 	echo "[i] run tempfile: $tfile"
-	/usr/bin/mysqld --user=mysql --bootstrap --verbose=0 < $tfile
+	/usr/bin/mysqld --user=mysql --bootstrap --verbose=0 --skip-networking=0 < $tfile
 	rm -f $tfile
 fi
 
@@ -72,4 +72,4 @@ echo "[i] Sleeping 5 sec"
 sleep 5
 
 echo '[i] start running mysqld'
-exec /usr/bin/mysqld --user=mysql --console
+exec /usr/bin/mysqld --user=mysql --console --skip-networking=0
