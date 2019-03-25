@@ -1,9 +1,10 @@
-FROM alpine:3.9
+FROM alpine:3.8
 MAINTAINER leafney "babycoolzx@126.com"
 
-ENV MYSQL_VERSION=10.3.13-r0
+ENV MYSQL_VERSION=10.2.22-r0
 
-RUN apk add --no-cache mysql=${MYSQL_VERSION} mysql-client=${MYSQL_VERSION} && \
+RUN apk update && \
+	apk add mysql=${MYSQL_VERSION} mysql-client=${MYSQL_VERSION} mariadb-server-utils=${MYSQL_VERSION} && \
 	addgroup mysql mysql && \
 	mkdir /scripts && \
 	rm -rf /var/cache/apk/*
