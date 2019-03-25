@@ -20,7 +20,7 @@ else
 
 	# init database
 	echo 'Initializing database'
-	mysql_install_db --user=mysql > /dev/null
+	mysql_install_db --user=mysql --ldata=/var/lib/mysql > /dev/null
 	echo 'Database initialized'
 
 	echo "[i] MySql root password: $MYSQL_ROOT_PWD"
