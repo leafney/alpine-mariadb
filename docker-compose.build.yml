@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mysql:
+    build: .
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql
+    environment: 
+      - MYSQL_ROOT_PWD=123
+      - MYSQL_USER=dev
+      - MYSQL_USER_PWD=dev
+      - MYSQL_USER_DB=userdb
+    volumes:
+      - $PWD/mysql_data:/var/lib/mysql
+
+networks:
+  mysql:

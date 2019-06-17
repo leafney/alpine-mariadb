@@ -1,7 +1,7 @@
 FROM alpine:3.9
-MAINTAINER leafney "babycoolzx@126.com"
+LABEL maintainer="leafney <babycoolzx@126.com>"
 
-ENV MYSQL_VERSION=10.3.13-r0
+ENV MYSQL_VERSION=10.3.15-r0
 
 RUN apk add --no-cache mysql=${MYSQL_VERSION} mysql-client=${MYSQL_VERSION} mariadb-server-utils=${MYSQL_VERSION} && \
 	addgroup mysql mysql && \
