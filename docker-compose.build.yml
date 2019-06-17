@@ -12,8 +12,6 @@ services:
       - MYSQL_USER=dev
       - MYSQL_USER_PWD=dev
       - MYSQL_USER_DB=userdb
-    volumes:
-      - $PWD/mysql_data:/var/lib/mysql
 
 networks:
   mysql:

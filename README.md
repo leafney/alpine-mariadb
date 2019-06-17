@@ -34,3 +34,17 @@ $ docker run --name mysql -v /mysql/data/:/var/lib/mysql -d -p 3306:3306 -e MYSQ
 ```
 $ docker run --name mysql -v /mysql/data/:/var/lib/mysql -d -p 3306:3306 -e MYSQL_ROOT_PWD=123 -e MYSQL_USER=dev -e MYSQL_USER_PWD=dev -e MYSQL_USER_DB=userdb leafney/alpine-mariadb:latest
 ```
+
+#### Run with docker-compose file
+
+```
+$ docker-compose up -d
+```
+
+#### Build with docker-compose file
+
+```
+$ docker-compose -f docker-compose.build.yml up -d
+```
+
+Note: Please get the latest version of mysql from the website https://pkgs.alpinelinux.org/packages if you encounter problems in building.
